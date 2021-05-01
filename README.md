@@ -23,10 +23,10 @@
 ## 設計書
 
 - ER 図
-  ![ER図](2021-05-01-15-23-56.png)
+  ![ER図](https://user-images.githubusercontent.com/78584031/116778411-b1433280-aaac-11eb-86b6-71f94caf0986.png)
 
 - 画面設計
-  ![簡易的な画面設計](2021-05-01-15-30-38.png)
+  ![簡易的な画面設計](https://user-images.githubusercontent.com/78584031/116778428-cddf6a80-aaac-11eb-9879-2ff4d5aa286e.png)
 
 - テーブル定義書
   https://docs.google.com/spreadsheets/d/1OHf4J5Fxt38isWKnJ0sb5wcYJHy7onKfnvcY8giV9Vo/edit?usp=sharing
