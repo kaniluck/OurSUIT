@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-secondary mt-0 mb-3 fixed-top">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav4" aria-controls="navbarNav4" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <%= link_to image_tag("logo.png"), "root_path" %>
+  <div class="collapse navbar-collapse justify-content-center">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <%= link_to root_path do %><i class="fas fa-info-circle"></i>ABOUT<% end %>
+      </li>
+      <li class="nav-item active">
+        <%= link_to root_path do %><i class="fas fa-crown"></i>ランキング<% end %>
+      </li>
+      <li class="nav-item active">
+        <%= link_to root_path do %><i class="fas fa-search"></i>タグ検索<% end %>
+      </li>
+    </ul>
+  </div>
+  <div class="collapse navbar-collapse justify-content-end">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <%= link_to "新規登録", new_user_registration_path %>
+      </li>
+      <li class="nav-item active">
+        <%= link_to "ログイン", new_user_session_path %>
+      </li>
+    </ul>
+  </div>
+</nav>
