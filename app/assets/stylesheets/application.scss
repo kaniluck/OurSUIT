@@ -26,3 +26,8 @@
  .container {
   height: 100%;
  }
+
+ .main-visual {
+  background-image: url("<%= asset_path('main.jpg') %>");
+  background-size:cover;
+ }

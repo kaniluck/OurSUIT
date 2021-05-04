@@ -1,29 +1,31 @@
-<nav class="navbar navbar-expand-sm navbar-dark bg-secondary mt-0 mb-3 fixed-top">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav4" aria-controls="navbarNav4" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <%= link_to image_tag("logo.png"), "root_path" %>
-  <div class="collapse navbar-collapse justify-content-center">
+<nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
+  <div class="d-flex w-50 order-0">
+    <%= link_to image_tag("logo.png"), "root_path" %>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+  <div class="navbar-collapse collapse justify-content-center order-2" id="collapsingNavbar">
     <ul class="navbar-nav">
-      <li class="nav-item active">
-        <%= link_to root_path do %><i class="fas fa-info-circle"></i>ABOUT<% end %>
+      <li class="nav-item mr-5" data-toggle="tooltip" title="アバウト">
+        <%= link_to root_path do %><i class="fas fa-info-circle"></i><% end %>
       </li>
-      <li class="nav-item active">
-        <%= link_to root_path do %><i class="fas fa-crown"></i>ランキング<% end %>
+      <li class="nav-item mr-5" data-toggle="tooltip" title="ランキング">
+        <%= link_to root_path do %><i class="fas fa-crown"></i><% end %>
       </li>
-      <li class="nav-item active">
-        <%= link_to root_path do %><i class="fas fa-search"></i>タグ検索<% end %>
+      <li class="nav-item" data-toggle="tooltip" title="タグ検索">
+        <%= link_to root_path do %><i class="fas fa-search"></i><% end %>
       </li>
     </ul>
   </div>
-  <div class="collapse navbar-collapse justify-content-end">
-    <ul class="navbar-nav">
-      <li class="nav-item active">
-        <%= link_to "新規登録", new_user_registration_path %>
-      </li>
-      <li class="nav-item active">
-        <%= link_to "ログイン", new_user_session_path %>
-      </li>
+  <div class="navbar-text small text-truncate mt-1 w-50 text-right order-1 order-md-last">
+    <ul>
+    <li class="mr-3" data-toggle="tooltip" title="新規登録">
+      <%= link_to new_user_registration_path do %><i class="fas fa-user-tie"></i><% end %>
+    </li>
+    <li class="mr-3" data-toggle="tooltip" title="サインイン">
+      <%= link_to new_user_session_path do %><i class="fas fa-sign-in-alt"></i><% end %>
+    </li>
     </ul>
   </div>
 </nav>
