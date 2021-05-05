@@ -1,1 +1,13 @@
-
+<div class="main-visual">
+  <h2 class="catch-copy">
+    スーツは紳士の鎧<br/>
+    紳士は現代の騎士
+  </h2>
+</div>
+<div>
+  <div class="slider">
+    <% @randams.each do |randam| %>
+      <%= link_to image_tag(randam.image), post_path(randam.id), method: :get %>
+    <% end %>
+  </div>
+</div>
