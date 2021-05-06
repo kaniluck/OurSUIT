@@ -4,26 +4,27 @@
     <title>Oursuit</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    
+    <!--slick導入の為の記述-->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <!--ここまで-->
+    
+    <!--fontawesome導入の為の記述-->
+    <script src="https://kit.fontawesome.com/7e58df9bea.js" crossorigin="anonymous"></script>
+    <!--ここまで-->
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-
-    <% if user_signed_in? %>
-      <li>
-        <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-      </li>
-    <% else %>
-      <li>
-        <%= link_to "新規登録", new_user_registration_path %>
-      </li>
-      <li>
-        <%= link_to "ログイン", new_user_session_path %>
-      </li>
-    <% end %>
-
+    <div id="header">
+      <%= render "layouts/header" %>
+    </div>
+    <div id="contents">
     <%= yield %>
+    </div>
+    <%= render "layouts/footer" %>
   </body>
 </html>

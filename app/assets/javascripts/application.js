@@ -18,3 +18,28 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function(){
+  $('.slider').slick({
+    autoplay: true,
+    infinite: true,
+    dots: true,
+    // variableWidth: true,
+    slidesToShow: 4,
+    slidesToScroll: 3,
+    //レスポンシブ対応
+    responsive: [{
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 2,
+      }
+    }, {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+      }
+    }]
+  });
+});

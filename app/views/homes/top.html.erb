@@ -1,0 +1,13 @@
+<div class="main-visual">
+  <h2 class="catch-copy">
+    スーツは紳士の鎧<br/>
+    紳士は現代の騎士
+  </h2>
+</div>
+<div>
+  <div class="slider">
+  <% @posts.each do |post| %>
+    <%= attachment_image_tag post, :image, format: "jpeg" %>
+  <% end %>
+  </div>
+</div>
