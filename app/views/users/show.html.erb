@@ -1,0 +1,14 @@
+<div class='container-fluid'>
+  <div class='row'>
+    <div class='col-md-3'>
+      <div class="user_info">
+        <%= render 'info', user: @user %>
+      </div>
+    </div>
+    <div class='col-md-7'>
+      <%= render 'list', posts: @posts %>
+    </div>
+    <div class='col-md-2 bg-secondary'>
+    </div>
+  </div>
+</div>
