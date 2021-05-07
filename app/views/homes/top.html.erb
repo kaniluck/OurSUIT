@@ -6,8 +6,8 @@
 </div>
 <div>
   <div class="slider">
-  <% @posts.each do |post| %>
-    <%= attachment_image_tag post, :image, format: "jpeg" %>
-  <% end %>
+    <% @randams.each do |post| %>
+      <%= link_to image_tag(post.image), post_path(post.id), method: :get %>
+    <% end %>
   </div>
 </div>
