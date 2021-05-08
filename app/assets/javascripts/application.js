@@ -24,7 +24,6 @@ $(document).ready(function(){
     autoplay: true,
     infinite: true,
     dots: true,
-    // variableWidth: true,
     slidesToShow: 4,
     slidesToScroll: 3,
     //レスポンシブ対応
