@@ -1,8 +1,7 @@
 class HomesController < ApplicationController
 
   def top
-    @posts = Post.all
-    @randams = Post.order("RANDOM()").limit(5)
+    @randams = Post.order("RANDOM()").limit(20)
   end
 
 end
