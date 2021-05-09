@@ -14,7 +14,7 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all
+    @posts = Post.includes(:users).sort {|a,b| b.users.size <=> a.users.size}
   end
 
   def show
