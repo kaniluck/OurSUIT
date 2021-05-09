@@ -24,7 +24,11 @@
       <%= render "layouts/header" %>
     </div>
     <div id="contents">
-    <%= yield %>
+      <div id="mask" class="hidden"></div>
+      <div id="modal" class="hidden">
+      <p>モーダルウィンドウ<p>
+      </div>
+      <%= yield %>
     </div>
     <%= render "layouts/footer" %>
   </body>
