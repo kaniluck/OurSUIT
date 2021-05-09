@@ -11,6 +11,9 @@
           <%= attachment_image_tag @user_icon, :profile_image, size: "50x50", format: 'jpeg', fallback: "no_image.jpg", class:"rounded-circle"; %>
         <% end %>
       </li>
+      <li class="nav-item mr-5 mt-2" data-toggle="tooltip" title="タイムライン">
+        <%= link_to root_path do %><i class="fas fa-home fa-2x faa-shake animated-hover icon_color"></i><% end %>
+      </li>
       <li class="nav-item mr-5 mt-2" data-toggle="tooltip" title="ランキング">
         <%= link_to root_path do %><i class="fas fa-crown fa-2x faa-shake animated-hover icon_color"></i><% end %>
       </li>
