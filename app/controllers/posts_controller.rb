@@ -14,7 +14,8 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.includes(:users).sort {|a,b| b.users.size <=> a.users.size}
+    posts = Post.includes(:users).sort {|a,b| b.users.size <=> a.users.size}
+    @posts = Kaminari.paginate_array(posts).page(params[:page]).per(9)
   end
 
   def show

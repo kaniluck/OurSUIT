@@ -6,3 +6,29 @@
   height: 920px;
   overflow: auto;
 }
+
+.ranking-index {
+  display: flex;
+  flex-wrap: wrap;
+  align-items:stretch;
+  justify-content:space-around;
+  flex-direction:row;
+  align-content:stretch;
+}
+
+.ranking-index-items {
+  width: 30%;
+  height: 30%;
+}
+
+.ranking-gold {
+  color: #f1d606
+}
+
+.ranking-silver {
+  color: #c0c0c0
+}
+
+.ranking-bronze {
+  color: #AE6938
+}
