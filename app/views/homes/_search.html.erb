@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row no-gutters">
+    <div class="col-md-5 col-sm-10 mx-2 mx-sm-auto text-center shadow-lg rounded px-0 my-5">
+      <h5 class="text-dark bg-info py-4 mb-0">タグ検索</h5>
+      <div class="form-body bg-light p-4">
+        <%= form_with url: index_path, method: :get do %>
+          <div class="input-group mb-3 justify-content-center">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fas fa-search-plus"></i></span>
+            </div>
+            <%= select_tag :tag_id, options_from_collection_for_select(Tag.all, :id, :name, params[:tag_id]), {prompt: 'タグで絞り込み',onchange: 'submit(this.form);'} %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

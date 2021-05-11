@@ -14,13 +14,19 @@
             <div class="input-group-prepend">
               <span class="input-group-text"><i class="fab fa-black-tie"></i></span>
             </div>
-            <%= f.text_field :title, size:"30x5" %>
+            <%= f.text_field :title, size:"30x5", placeholder:"タイトル" %>
           </div>
           <div class="input-group mb-3">
             <div class="input-group-prepend">
               <span class="input-group-text"><i class="fas fa-comment-dots"></i></span>
             </div>
-            <%= f.text_area :text, size:"40x5" %>
+            <%= f.text_area :text, size:"40x5", placeholder:"コメント" %>
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fas fa-tags"></i></span>
+            </div>
+            <%= f.text_field :tag_ids, size:"30x5", id:'tag_ids', placeholder:"「,」で区切れば複数タグ付け可能" %>
           </div>
           <%= f.submit 'シェアする', class:"btn btn-lg btn-info mt-5" %>
         <% end %>

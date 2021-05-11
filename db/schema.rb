@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_09_002850) do
+ActiveRecord::Schema.define(version: 2021_05_11_044443) do
 
   create_table "likes", force: :cascade do |t|
     t.integer "user_id"
@@ -31,6 +31,16 @@ ActiveRecord::Schema.define(version: 2021_05_09_002850) do
     t.index ["user_id"], name: "index_post_comments_on_user_id"
   end
 
+  create_table "post_tags", force: :cascade do |t|
+    t.integer "post_id"
+    t.integer "tag_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id", "tag_id"], name: "index_post_tags_on_post_id_and_tag_id", unique: true
+    t.index ["post_id"], name: "index_post_tags_on_post_id"
+    t.index ["tag_id"], name: "index_post_tags_on_tag_id"
+  end
+
   create_table "posts", force: :cascade do |t|
     t.string "title"
     t.text "text"
@@ -43,6 +53,12 @@ ActiveRecord::Schema.define(version: 2021_05_09_002850) do
   create_table "relationships", force: :cascade do |t|
     t.integer "follower_id"
     t.integer "followed_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

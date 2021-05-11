@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   root 'homes#top'
 
+  get 'search' => 'homes#search'
+  get 'index' => 'homes#index'
+
   devise_for :users
 
   resources :posts, only: [:new, :create, :index, :show, :destroy] do
