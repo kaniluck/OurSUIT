@@ -4,6 +4,7 @@
       <h2 class="text-center mt-4">いいね数ランキング</h2>
     </div>
   </div>
+  <% if params[:page].nil? || params[:page] == 1 %>
   <div class='row mt-4'>
     <div class="col-md-4">
       <p class="text-center">
@@ -21,6 +22,7 @@
       </p>
     </div>
   </div>
+  <% end %>
   <div class='row'>
     <div class="ranking-index">
       <% @posts.each do |post| %>
