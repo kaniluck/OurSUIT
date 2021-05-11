@@ -19,7 +19,10 @@
                   <strong><i class="fab fa-black-tie"></i><span> <%= @post.title %></span></strong>
                 </p>
                 <p class="card-title"><i class="fas fa-comment-dots"></i> <%= @post.text %></p>
-                <span><i class="fas fa-user-tie"></i> By <%= @post.user.name %> ｜ </span>
+                <% @post.tags.each do |tag| %>
+                  <p class="card-title"><i class="fas fa-tags"></i> <%= tag.name %></p>
+                <% end %>
+                <span><i class="fas fa-user-tie"></i> <%= @post.user.name %> ｜ </span>
                   <span><%= render "likes/like-btn", post: @post %> ｜ </span>
                 <span><i class="fa fa-calendar"></i> <%= @post.created_at.strftime('%Y/%m/%d') %></span>
                 <% if @post.user == current_user %>
