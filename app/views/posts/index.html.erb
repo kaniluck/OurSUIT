@@ -4,6 +4,23 @@
       <h2 class="text-center mt-4">いいね数ランキング</h2>
     </div>
   </div>
+  <div class='row mt-4'>
+    <div class="col-md-4">
+      <p class="text-center">
+        <i class="fas fa-trophy fa-3x ranking-gold"></i> 1位
+      </p>
+    </div>
+    <div class="col-md-4">
+      <p class="text-center">
+        <i class="fas fa-medal fa-3x ranking-silver"></i> 2位
+      </p>
+    </div>
+    <div class="col-md-4">
+      <p class="text-center">
+        <i class="fas fa-award fa-3x ranking-bronze"></i> 3位
+      </p>
+    </div>
+  </div>
   <div class='row'>
     <div class="ranking-index">
       <% @posts.each do |post| %>
@@ -37,4 +54,5 @@
       <% end %>
     </div>
   </div>
+  <%= paginate @posts %>
 </div>

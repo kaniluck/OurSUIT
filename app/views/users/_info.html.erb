@@ -24,10 +24,10 @@
     <th><%= link_to "いいね一覧", root_path %></th>
   </tr>
   <tr>
-    <th><%= link_to "フォロー中", user_followings_path(user) %></th>
+    <th><%= link_to user_followings_path(user), remote: true do %>フォロー中<% end %></th>
   </tr>
   <tr>
-    <th><%= link_to "フォロワー", user_followers_path(user) %></th>
+    <th><%= link_to user_followers_path(user), remote: true do %>フォロワー<% end %></th>
   </tr>
   <tr>
     <th>
