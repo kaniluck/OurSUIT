@@ -18,10 +18,7 @@
     <% end %>
   </tr>
   <tr>
-    <th><%= link_to "ブックマーク", root_path %></th>
-  </tr>
-  <tr>
-    <th><%= link_to "いいね一覧", root_path %></th>
+    <th><%= link_to "いいね一覧", likes_index_post_path(user) %></th>
   </tr>
   <tr>
     <th><%= link_to user_followings_path(user), remote: true do %>フォロー中<% end %></th>

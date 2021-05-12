@@ -32,6 +32,11 @@ class PostsController < ApplicationController
     redirect_to user_path(current_user)
   end
 
+  def likes_index
+    @user = User.find(params[:id])
+    @posts = Kaminari.paginate_array(@user.like_posts).page(params[:page]).per(9)
+  end
+
    private
 
   def post_params
