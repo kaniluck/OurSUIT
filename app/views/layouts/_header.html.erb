@@ -32,7 +32,7 @@
   <% else %>
     <ul class="navbar-nav">
       <li class="nav-item mr-5" data-toggle="tooltip" title="アバウト">
-        <%= link_to root_path do %><i class="fas fa-info-circle fa-2x faa-shake animated-hover icon_color"></i><% end %>
+        <%= link_to root_path(anchor: 'about') do %><i class="fas fa-info-circle fa-2x faa-shake animated-hover icon_color"></i><% end %>
       </li>
       <li class="nav-item mr-5" data-toggle="tooltip" title="ランキング">
         <%= link_to posts_path do %><i class="fas fa-crown fa-2x faa-shake animated-hover icon_color"></i><% end %>

@@ -32,3 +32,17 @@
 .ranking-bronze {
   color: #AE6938
 }
+
+.likes-index {
+  display: flex;
+  flex-wrap: wrap;
+  align-items:stretch;
+  justify-content:space-around;
+  flex-direction:row;
+  align-content:stretch;
+}
+
+.likes-index-items {
+  width: 30%;
+  height: 30%;
+}
