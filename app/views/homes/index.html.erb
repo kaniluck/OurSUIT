@@ -8,7 +8,7 @@
     <div class="search-index">
       <% @posts.each do |post| %>
         <div class="search-index-items">
-          <div class="card mt-4 shadow-lg">
+          <div id="post_<%= post.id %>" class="card mt-4 shadow-lg">
             <%= link_to post_path(post.id) do %>
               <%= attachment_image_tag post, :image, class:"card-img-top"; %>
             <% end %>
@@ -26,7 +26,8 @@
                     <% end %>
                   </p>
                   <p class="card-text"><i class="fas fa-comment-dots"></i> <%= post.text %></p>
-                  <span><i class="fas fa-user-tie"></i> <%= post.user.name %> ｜ <%= render "likes/like-btn", post: post %> ｜ </span>
+                  <span><i class="fas fa-user-tie"></i> <%= post.user.name %> ｜ </span>
+                  <span class="like-btn"><%= render "likes/like-btn", post: post %></span>
                   <span><%= link_to "コメント #{post.post_comments.count}", post_path(post.id), class:"text-dark" %> ｜ </span>
                   <span><i class="fa fa-calendar"></i> <%= post.created_at.strftime('%Y/%m/%d') %></span>
                 </div>

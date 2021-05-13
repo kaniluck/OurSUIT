@@ -1,4 +1,5 @@
 class HomesController < ApplicationController
+  before_action :authenticate_user!, only: [:index]
 
   def top
     @randams = Post.order("RANDOM()").limit(20)
