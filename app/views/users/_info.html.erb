@@ -1,34 +1,34 @@
-<table class='table'>
-  <tr>
-    <%= link_to user_path(user) do %>
-    <%= attachment_image_tag(user, :profile_image, size: "100x100", format: 'jpeg', fallback: "no_image.jpg", class:"rounded-circle") %>
-    <% end %>
-  </tr>
-  <tr>
-	  <th>name</th>
-	  <th><%= user.name %></th>
-  </tr>
-  <tr>
-	  <th>intro</th>
-	  <th><%= user.intro %></th>
-  </tr>
-  <tr>
-    <% if current_user == user %>
-    <th><%= link_to 'プロフィールを編集',edit_user_path(user),class: "btn btn-outline-dark btn-block edit_user_#{user.id}" %></th>
-    <% end %>
-  </tr>
-  <tr>
-    <th><%= link_to "いいね一覧", likes_index_post_path(user) %></th>
-  </tr>
-  <tr>
-    <th><%= link_to user_followings_path(user), remote: true do %>フォロー中<% end %></th>
-  </tr>
-  <tr>
-    <th><%= link_to user_followers_path(user), remote: true do %>フォロワー<% end %></th>
-  </tr>
-  <tr>
-    <th class="follow-btn">
-      <%= render "relationships/follow-btn", user: user %>
-    </th>
-  </tr>
-</table>
+  <div class="row no-gutters">
+    <div class="offset-3 col-9 text-center shadow-lg rounded px-0 my-5">
+      <div class="py-4">
+        <%= link_to user_path(user) do %>
+        <%= attachment_image_tag(user, :profile_image, size: "150x150", format: 'jpeg', fallback: "no_image.jpg", class:"rounded-circle") %>
+        <% end %>
+      </div>
+      <div class="px-4">
+        <div class="mb-3">
+          <strong><h4><%= user.name %></h4></strong>
+        </div>
+        <div class="mb-3">
+          <%= user.intro %>
+        </div>
+        <div class="mb-3">
+          <% if current_user == user %>
+          <%= link_to 'プロフィールを編集',edit_user_path(user),class: "btn btn-outline-dark btn-block edit_user_#{user.id}" %>
+          <% end %>
+        </div>
+        <div class="mb-3">
+          <%= link_to "いいね一覧", likes_index_post_path(user) %>
+        </div>
+        <div class="mb-3">
+          <%= link_to user_followings_path(user), remote: true do %>フォロー中<% end %>
+        </div>
+        <div class="mb-3">
+          <%= link_to user_followers_path(user), remote: true do %>フォロワー<% end %>
+        </div>
+        <div class="follow-btn mb-3">
+          <%= render "relationships/follow-btn", user: user %>
+        </div>
+      </div>
+    </div>
+  </div>
