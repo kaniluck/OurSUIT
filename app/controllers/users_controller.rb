@@ -19,6 +19,13 @@ class UsersController < ApplicationController
     end
   end
 
+  def time_line
+    @posts_all = Post.all
+    @user = User.find(current_user.id)
+    @followings_users = @user.followings
+    @posts = @posts_all.where(user_id: @followings_users).order("created_at DESC").page(params[:page]).per(9)
+  end
+
   private
 
   def user_params

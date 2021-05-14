@@ -12,7 +12,7 @@
         <% end %>
       </li>
       <li class="nav-item mr-5 mt-2" data-toggle="tooltip" title="タイムライン">
-        <%= link_to root_path do %><i class="fas fa-home fa-2x faa-shake animated-hover icon_color"></i><% end %>
+        <%= link_to time_line_user_path(current_user.id) do %><i class="fas fa-home fa-2x faa-shake animated-hover icon_color"></i><% end %>
       </li>
       <li class="nav-item mr-5 mt-2" data-toggle="tooltip" title="ランキング">
         <%= link_to posts_path do %><i class="fas fa-crown fa-2x faa-shake animated-hover icon_color"></i><% end %>
