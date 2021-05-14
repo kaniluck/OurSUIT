@@ -8,7 +8,24 @@
     <div class='col-md-7'>
       <%= render 'list', posts: @posts %>
     </div>
-    <div class='col-md-2 bg-secondary'>
+    <div class='col-md-2'>
+      <div class="randam-users">
+        <h5>こんなユーザーもいます</h5>
+        <table class='table'>
+          <tbody>
+            <% @randams.each do |user| %>
+              <tr>
+                <td>
+                  <%= link_to user_path(user) do %>
+                  <%= attachment_image_tag(user, :profile_image, size: "40x40", format: 'jpeg', fallback: "no_image.jpg", class:"rounded-circle") %>
+                  <% end %>
+                </td>
+                <td><%= user.name %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </div>
