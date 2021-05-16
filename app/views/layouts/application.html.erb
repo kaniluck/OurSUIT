@@ -24,9 +24,12 @@
       <%= render "layouts/header" %>
     </div>
     <div id="contents">
+      <% flash.each do |message_type, message| %>
+        <%= message %>
+      <% end %>
       <div id="mask" class="hidden"></div>
       <div id="modal" class="hidden">
-      <p>モーダルウィンドウ<p>
+        <p>モーダルウィンドウ<p>
       </div>
       <%= yield %>
     </div>
