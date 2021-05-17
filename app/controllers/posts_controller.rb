@@ -10,9 +10,12 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.user_id = current_user.id
     tag_list = params[:post][:tag_ids].split(',')
-    @post.save
-    @post.save_tags(tag_list)
-    redirect_to post_path(@post)
+    if  @post.save
+      @post.save_tags(tag_list)
+      redirect_to post_path(@post), success: "投稿を作成しました！"
+    else
+      redirect_to user_path(current_user), warning: "写真とタイトルは必須です。"
+    end
   end
 
   def index
@@ -29,7 +32,7 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
-    redirect_to user_path(current_user)
+    redirect_to user_path(current_user), danger: "投稿を削除しました。"
   end
 
   def likes_index
