@@ -6,7 +6,9 @@ class PostCommentsController < ApplicationController
 		@post_comment = PostComment.new(post_comment_params)
 		@post_comment.post_id = @post.id
 		@post_comment.user_id = current_user.id
-		@post_comment.save
+		unless  @post_comment.save
+			redirect_to post_path(@post), warning: "空のコメントはできません。"
+		end
 	end
 
 	def destroy

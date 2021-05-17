@@ -13,8 +13,9 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      redirect_to user_path(@user)
+      redirect_to user_path(@user), success: "ユーザー情報を更新しました！"
     else
+      flash.now[:warning] = '必須項目を入力してください。'
       render "edit"
     end
   end

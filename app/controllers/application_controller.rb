@@ -2,6 +2,8 @@ class ApplicationController < ActionController::Base
 
   before_action :configure_permitted_parameters, if: :devise_controller?
 
+  add_flash_types :success, :info, :warning, :danger
+
   before_action :get_current_user
   def get_current_user
     @user_icon = current_user

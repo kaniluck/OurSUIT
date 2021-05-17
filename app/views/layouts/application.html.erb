@@ -24,8 +24,10 @@
       <%= render "layouts/header" %>
     </div>
     <div id="contents">
-      <% flash.each do |message_type, message| %>
-        <%= message %>
+      <% flash.each do |key, value| %>
+        <p class="alert alert-<%= key %>">
+          <%= value %>
+        </p>
       <% end %>
       <div id="mask" class="hidden"></div>
       <div id="modal" class="hidden">
