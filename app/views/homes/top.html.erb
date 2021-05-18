@@ -1,0 +1,49 @@
+<div class="main-visual">
+  <h2 class="catch-copy">
+    スーツ、それは<br/>
+    紳士の鎧。
+  </h2>
+</div>
+<div>
+  <div class="slider">
+    <% @randams.each do |post| %>
+    <div class="card mx-auto shadow-lg">
+      <%= link_to post_path(post.id) do %>
+        <%= attachment_image_tag post, :image, class:"card-img-top"; %>
+      <% end %>
+      <div class="card-body pt-0">
+        <div class="row">
+          <div class="offset-2 col-10 p-0">
+            <p class="card-title">
+              <%= link_to(post_path(post.id), class:"text-dark") do %>
+                <strong><i class="fab fa-black-tie"></i><span> <%= post.title %></span></strong>
+              <% end %>
+            </p>
+            <span><i class="fas fa-user-tie"></i> <%= post.user.name %> ｜ </span>
+            <span><i class="fas fa-heart"></i> <%= post.likes.count %> ｜ </span>
+            <span> コメント <%= post.post_comments.count %></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
+<div id="about"></div>
+<strong>
+  <p class="text-center">
+    仕事服は仕方なく着るものでしょうか？<br/>
+    もしかしたら普段着よりも長い時間着ているかもしれません。<br/>
+    年々働き方が多様化する中、カジュアルな仕事服が増えることで、スーツの必要性が問われています。<br/>
+    <br/>
+    しかし、着ればやっぱり格好いい、知れば知るほど奥が深いのがスーツ。<br/>
+    OurSuitは、スーツ好きが集まり、コーディネートを共有する写真投稿サイトです。
+  </p>
+</strong>
+<div class="sub">
+  <div class="sub-visual"></div>
+  <div class="sing-up">
+    <%= link_to 'ゲストログイン(閲覧用)', users_guest_sign_in_path, method: :post, class: 'btn btn-info' %>
+    <%= link_to " さっそく始める ", new_user_registration_path, class: 'btn btn-success' %>
+  </div>
+</div>

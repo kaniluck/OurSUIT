@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row no-gutters">
+    <div class="col-md-5 col-sm-10 mx-2 mx-sm-auto text-center shadow-lg rounded px-0 my-5">
+      <h5 class="text-dark bg-info py-4 mb-0">フォロー</h5>
+      <div class="body bg-light p-4">
+        <% if @users.exists? %>
+          <table class='table'>
+            <tbody>
+              <% @users.each do |user| %>
+                <tr id="user_<%= user.id %>">
+                  <td>
+                    <%= link_to user_path(user) do %>
+                    <%= attachment_image_tag(user, :profile_image, size: "40x40", format: 'jpeg', fallback: "no_image.jpg", class:"rounded-circle") %>
+                    <% end %>
+                  </td>
+                  <td><%= user.name %></td>
+                  <td class="followings-btn">
+                    <%= render "follow-btn", user: user %>
+                  </td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        <% else %>
+          <p>ユーザーはいません</p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row no-gutters">
+    <div class="col-md-5 col-sm-10 mx-2 mx-sm-auto text-center shadow-lg rounded px-0 my-5">
+      <h5 class="text-dark bg-info py-4 mb-0">今日のスーツは？</h5>
+      <div class="form-body bg-light p-4">
+        <%= form_with model: @post, local:true do |f| %>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fas fa-camera-retro"></i></span>
+            </div>
+            <%= f.attachment_field :image %>
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fab fa-black-tie"></i></span>
+            </div>
+            <%= f.text_field :title, size:"30x5", placeholder:"タイトル" %>
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fas fa-comment-dots"></i></span>
+            </div>
+            <%= f.text_area :text, size:"40x5", placeholder:"コメント" %>
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fas fa-tags"></i></span>
+            </div>
+            <%= f.text_field :tag_ids, size:"30x5", id:'tag_ids', placeholder:"「,」で区切れば複数タグ付け可能" %>
+          </div>
+          <%= f.submit 'シェアする', class:"btn btn-lg btn-info mt-5" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

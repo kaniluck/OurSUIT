@@ -1,0 +1,65 @@
+// Place all the styles related to the Homes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+ .main-visual {
+  background-image: url("<%= asset_path('main.jpg') %>");
+  height: 500px;
+  background-size:cover;
+ }
+
+ .catch-copy {
+  position: absolute;
+  right: 120px;
+  top: 240px;
+  font-size: 60px;
+  color: #fff;
+ }
+
+ .search-index {
+  display: flex;
+  flex-wrap: wrap;
+  align-items:stretch;
+  justify-content:space-around;
+  flex-direction:row;
+  align-content:stretch;
+}
+
+.search-index-items {
+  width: 30%;
+  height: 30%;
+}
+
+#about {
+  background-image: url("<%= asset_path('logo.png') %>");
+  height: 79px;
+  width: 167px;
+  background-size:cover;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 80px;
+  margin-bottom: 30px;
+ }
+
+ .sub-visual {
+  background-image: url("<%= asset_path('sub.jpg') %>");
+  height: 640px;
+  width: 960px;
+  background-size:100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 80px;
+  margin-bottom: 30px;
+ }
+
+ .sub {
+  background: linear-gradient(to bottom, #FFF, #CCCCCC);
+  position: relative;
+ }
+
+ .sing-up {
+  position:fixed;
+  right:50px;
+  bottom:50px;
+ }
