@@ -5,7 +5,8 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @posts = @user.posts.order(created_at: :desc)
-    @randams = User.order("RANDOM()").limit(8)
+    rand = Rails.env.production? ? "rand()" : "RANDOM()"
+    @randams = User.order(rand).limit(7)
   end
 
   def edit
