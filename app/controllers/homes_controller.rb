@@ -2,7 +2,8 @@ class HomesController < ApplicationController
   before_action :authenticate_user!, only: [:index]
 
   def top
-    @randams = Post.order("RANDOM()").limit(20)
+    rand = Rails.env.production? ? "rand()" : "RANDOM()"
+    @randams = Post.order(rand).limit(15)
   end
 
   def search
