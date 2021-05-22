@@ -21,10 +21,10 @@
           <%= link_to "いいね一覧", likes_index_post_path(user) %>
         </div>
         <div class="mb-3">
-          <%= link_to user_followings_path(user), remote: true do %>フォロー中<% end %>
+          <%= link_to user_followings_path(user), remote: true do %><strong><%= user.followings.count %></strong> フォロー中<% end %>
         </div>
         <div class="mb-3">
-          <%= link_to user_followers_path(user), remote: true do %>フォロワー<% end %>
+          <%= link_to user_followers_path(user), remote: true do %><strong><%= user.followers.count %></strong> フォロワー<% end %>
         </div>
         <div class="follow-btn mb-3">
           <%= render "relationships/follow-btn", user: user %>
