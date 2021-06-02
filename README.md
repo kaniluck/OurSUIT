@@ -64,6 +64,10 @@
 - 環境変数(gem 'dotenv-rails'を用いて機密情報を格納)
 - データベース(MySQL)
 
+以下のリンク先から詳細をご覧ください。
+  
+https://docs.google.com/spreadsheets/d/1-YjYqysQiJtZxeJ1yrr6QjFOngcuqCcMm8esvf9XFnw/edit?usp=sharing
+
 ## トップページ
 ![top](https://user-images.githubusercontent.com/78584031/119248384-c0a92d80-bbcb-11eb-94c2-77f3064a07fa.png)
 
