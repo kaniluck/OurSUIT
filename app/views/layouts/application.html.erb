@@ -29,10 +29,12 @@
           <%= value %>
         </p>
       <% end %>
+      <!--モーダルウィンドウ表示の為-->
       <div id="mask" class="hidden"></div>
       <div id="modal" class="hidden">
         <p>モーダルウィンドウ<p>
       </div>
+      <!--ここまで-->
       <%= yield %>
     </div>
     <%= render "layouts/footer" %>

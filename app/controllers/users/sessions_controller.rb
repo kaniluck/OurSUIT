@@ -1,5 +1,5 @@
 class Users::SessionsController < Devise::SessionsController
-
+  # ゲストユーザーの為のコントローラー
   def guest_sign_in
     user = User.guest
     sign_in user

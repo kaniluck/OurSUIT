@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
 
   add_flash_types :success, :info, :warning, :danger
 
+  # ヘッダーにユーザーアイコン表示の為
   before_action :get_current_user
   def get_current_user
     @user_icon = current_user

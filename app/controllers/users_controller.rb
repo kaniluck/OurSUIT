@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
   before_action :ensure_correct_user, only: [:edit, :update]
 
+  # ユーザー詳細ページ表示の為
   def show
     @user = User.find(params[:id])
     @posts = @user.posts.order(created_at: :desc)
@@ -9,9 +10,11 @@ class UsersController < ApplicationController
     @randams = User.order(rand).limit(7)
   end
 
+  # プロフィール編集ページ表示の為
   def edit
   end
 
+  # プロフィール更新の為
   def update
     if @user.update(user_params)
       redirect_to user_path(@user), success: "ユーザー情報を更新しました！"
@@ -21,6 +24,7 @@ class UsersController < ApplicationController
     end
   end
 
+  # フォローしているユーザーの投稿タイムライン表示の為
   def time_line
     @posts_all = Post.all
     @user = User.find(current_user.id)

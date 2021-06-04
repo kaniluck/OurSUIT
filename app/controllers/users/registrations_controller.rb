@@ -1,4 +1,5 @@
 class Users::RegistrationsController < Devise::RegistrationsController
+  # ゲストユーザーの為のコントローラー
   before_action :ensure_normal_user, only: %i[update destroy]
 
   def ensure_normal_user

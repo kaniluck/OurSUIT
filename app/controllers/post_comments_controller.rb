@@ -1,6 +1,7 @@
 class PostCommentsController < ApplicationController
   before_action :authenticate_user!
 
+	# コメント追加
 	def create
 		@post = Post.find(params[:post_id])
 		@post_comment = PostComment.new(post_comment_params)
@@ -11,6 +12,7 @@ class PostCommentsController < ApplicationController
 		end
 	end
 
+	# コメント削除
 	def destroy
 		@post = Post.find(params[:post_id])
   	post_comment = @post.post_comments.find(params[:id])

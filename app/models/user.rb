@@ -4,6 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  # ゲストユーザーの為の記述
   def self.guest
     find_or_create_by!(email: 'guest@example.com', name: 'ゲスト') do |user|
       user.password = SecureRandom.urlsafe_base64
